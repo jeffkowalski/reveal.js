@@ -10,23 +10,23 @@
 				font-family: Helvetica;
 			}
 
-			#notes {
-				font-size: 24px;
-				width: 640px;
+                        #notes {
+				font-size: 18px;
 				margin-top: 5px;
 				clear: left;
+				white-space: pre-wrap;
 			}
 
 			#wrap-current-slide {
-				width: 640px;
-				height: 512px;
+				width: 320px;
+				height:256px;
 				float: left;
 				overflow: hidden;
 			}
 
 			#current-slide {
-				width: 1280px;
-				height: 1024px;
+				width:  640px;
+				height: 512px;
 				border: none;
 
 				-webkit-transform-origin: 0 0;
@@ -43,16 +43,16 @@
 			}
 
 			#wrap-next-slide {
-				width: 448px;
-				height: 358px;
+				width: 224px;
+				height: 179px;
 				float: left;
 				margin: 0 0 0 10px;
 				overflow: hidden;
 			}
 
 			#next-slide {
-				width: 1280px;
-				height: 1024px;
+				width: 640px;
+				height: 512px;
 				border: none;
 
 				-webkit-transform-origin: 0 0;
@@ -147,12 +147,7 @@
 		</script>
 
 		<div id="wrap-current-slide" class="slides">
-			<script>document.write( '<iframe width="1280" height="1024" id="current-slide" src="'+ notesCurrentSlideURL +'"></iframe>' );</script>
-		</div>
-
-		<div id="wrap-next-slide" class="slides">
-			<script>document.write( '<iframe width="640" height="512" id="next-slide" src="'+ notesNextSlideURL +'"></iframe>' );</script>
-			<span>UPCOMING:</span>
+			<script>document.write( '<iframe width="640" height="512" id="current-slide" src="'+ notesCurrentSlideURL +'"></iframe>' );</script>
 		</div>
 
 		<div class="time">
@@ -166,6 +161,11 @@
 			</div>
 		</div>
 
+		<div id="wrap-next-slide" class="slides">
+			<script>document.write( '<iframe width="320" height="256" id="next-slide" src="'+ notesNextSlideURL +'"></iframe>' );</script>
+			<span>UPCOMING:</span>
+		</div>
+
 		<div id="notes"></div>
 
 		<script src="../../plugin/markdown/marked.js"></script>
@@ -175,7 +175,7 @@
 
 				if( window.opener && window.opener.location && window.opener.location.href ) {
 
-					var notes = document.getElementById( 'notes' ),
+				var notes = document.getElementById( 'notes' ),
 						currentSlide = document.getElementById( 'current-slide' ),
 						nextSlide = document.getElementById( 'next-slide' ),
 						silenced = false;
